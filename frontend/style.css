@@ -1,0 +1,521 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: slategray;
+    display: flex;
+    justify-content: center;
+}
+
+.morning {
+    background: linear-gradient(135deg, #f3cc72, #51b0df, #06476e);
+}
+
+.afternoon {
+    background: linear-gradient(130deg, #f3c482, #25abca, #e3643d);
+}
+
+.evening {
+    background: linear-gradient(135deg, #de7676, #32c988, #0e4f9a);
+}
+
+.night {
+    background: linear-gradient(135deg, #380d2c, #3f09561f, #03086b);
+}
+
+.weather-icon {
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(10px) translateY(-10px); }
+}
+
+.card {
+    width: 90%;
+    max-width: 600px;
+    min-width: 470px;
+    color: #fff;
+    border-radius: 20px;
+    margin: 100px auto 0;
+    padding: 45px 35px;
+    text-align: center;
+    position: absolute;
+    height: fit-content;
+}
+
+.top-info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 15px;
+    z-index: 10;
+}
+
+.search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 15px;
+    z-index: 10;
+}
+
+.search input {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+    padding: 10px 25px;
+    height: 60px;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+}
+
+.search button {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.search button img {
+    width: 16px;
+}
+
+.weather-icon {
+    width: 170px;
+    margin-top: 30px;
+}
+
+.weather h1 {
+    font-size: 80px;
+    font-weight: 500;
+}
+
+.weather h2 {
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.col img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.humidity, .wind {
+    font-size: 28px;
+}
+
+.weather {
+    display: none;
+}
+
+.error {
+    display: none;
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    color: white;
+    background-color: rgba(181, 18, 18, 0.658);
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+#system {
+    width: 200px;
+    padding: 4px 5px;
+}
+
+.main-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#dateID {
+    text-align: left;
+    margin-left: 16px;
+}
+
+#feelsLike {
+    text-align: left;
+    margin-left: 16px;
+}
+
+.weather-by-time {
+    width: 94%;
+    min-width: 470px;
+    color: white;
+    border-radius: 20px;
+    margin: 50px auto 0;
+    padding: 30px 6px;
+    /* text-align: center; */
+    background: #00edfe4f;
+    display: flex;
+    overflow-x: hidden;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    overflow-x: auto;
+    border: 3px solid cyan;
+}
+
+.weather-by-time::-webkit-scrollbar {
+    display: none;
+}
+  
+.weather-by-time {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.weather-by-time h1 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.weather-by-time img {
+    width: 130px;
+    aspect-ratio: 1;
+}
+
+.weather-by-time h2 {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.weather-by-days {
+    width: 94%;
+    min-width: 470px;
+    color: white;
+    border-radius: 20px;
+    margin: 50px auto 0;
+    padding: 30px 30px;
+    flex-direction: column;
+    /* text-align: center; */
+    background: #00edfe4f;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    overflow-x: auto;
+    border: 3px solid cyan;
+}
+
+.dailyDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 30px;
+}
+
+.tempDiv {
+    display: flex;
+    gap: 10px;
+}
+
+.weather-by-days h1 {
+    font-size: 40px;
+}
+
+.smallDivClass {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.smallDivClass span {
+    font-size: 20px;
+}
+
+.smallDivClass img {
+    width: 90px;
+}
+
+.sunTimes {
+    border: 3px solid cyan;
+    display: flex;
+    width: 94%;
+    justify-content: center;
+    gap: 20px;
+    min-width: 470px;
+    color: white;
+    border-radius: 20px;
+    margin: 50px auto 0;
+    padding: 30px 30px;
+    /* text-align: center; */
+    background: #00edfe4f;
+}
+
+.sunTimes, .weather-by-days, .weather-by-time {
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out, opacity 0.3s ease-in;
+}
+
+.sunTimes:hover, .weather-by-days:hover, .weather-by-time:hover {
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
+    opacity: 0.8;
+}
+
+.sunTimes img {
+    width: 80px;
+}
+
+.sunTimes div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sunTimes div:nth-child(2) {
+    filter: grayscale(1);
+}
+
+.sunTimes p {
+    font-size: 30px;
+}
+
+.sunTimes span {
+    font-size: 20px;
+}
+
+.today {
+    color: black;
+}
+
+.preference {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    align-items: center;
+}
+
+.share button {
+    padding: 8px 12px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    /* transition: all 3s ease-in; */
+    background: white;
+    color: black;
+}
+
+.share button:hover {
+    box-shadow: cyan 0.5px 0.5px 3px;
+}
+
+.shareDiv {
+    position: fixed;
+    background: rgb(182, 137, 137);
+    width: fit-content;
+    height: fit-content;
+    padding: 15px 20px;
+    border-radius: 10px;
+    top: 250px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgb(57, 26, 26);
+}
+
+.blur {
+    opacity: 0.1;
+}
+
+.shareDiv div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    width: 200px;
+    cursor: pointer;
+}
+
+.shareDiv i {
+    font-size: 20px;
+}
+
+.shareDiv button {
+    padding: 10px 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.ri-close-line {
+    color: white;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.menu i {
+    cursor: pointer;
+    font-size: 35px;
+}
+
+.top-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.popup-menu {
+    z-index: 50;
+    position: absolute;
+    background: rgb(57, 23, 52);
+    height: 2100px;
+    width: 90%;
+    max-width: 600px;
+    min-width: 470px;
+    color: #fff;
+    border-radius: 20px;
+    margin: 100px auto 0;
+    padding: 40px 35px;
+    text-align: center;
+}
+
+#settings {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.locations-info {
+    margin-top: 45px;
+}
+
+.favorite-location {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+.favorite-location h1 {
+    margin-bottom: 15px;
+}
+
+.saved-location {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.map {
+    visibility: hidden;
+}
+
+.favorite-location i, .saved-location i {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#system {
+    padding: 8px 23px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: white;
+    color: black;
+    font-weight: 600;
+}
+
+.location {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 25px;
+}
+
+.location div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    gap: 10px;
+}
+
+.location img {
+    width: 80px;
+}
+
+.location div i {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#closeNav {
+    top: 39px;
+    right: 30px;
+    font-size: 30px;
+}
+
+.bookmarkDiv {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.bookmarkDiv i {
+    cursor: pointer;
+}
+
+.bookmarkDiv i {
+    font-size: 20px;
+}

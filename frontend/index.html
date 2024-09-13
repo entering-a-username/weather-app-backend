@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer></script>
+</head>
+<body style="position: relative;">
+
+    <!-- SHARE DIV -->
+    <div class="shareDiv hidden">
+        <i id="close" class="ri-close-line"></i>
+        <div>
+            <button id="share-twitter"><i class="ri-twitter-line"></i></button>
+            <p>Share on twitter</p>
+        </div>
+        <div>
+            <button id="share-facebook"><i class="ri-facebook-circle-line"></i></button>
+            <p>Share on facebook</p>
+        </div>
+    </div>
+
+
+    <!-- POPUP MENU -->
+    <div class="popup-menu hidden">
+        <div class="preference">
+            <select name="system" id="system">
+                <option value="metric">Metric</option>
+                <option value="imperial">Imperial</option>
+            </select>
+
+            <div class="share">
+                <button><i class="ri-share-line"></i></button>
+            </div>
+            <i id="closeNav" class="ri-close-line"></i>
+        </div>
+        <div class="locations-info">
+            <div class="favorite-location">
+                <i id="heart" class="ri-heart-line"></i>
+                <h1>Favorite Location</h1>
+                <i class="ri-information-line"></i>
+            </div>
+
+            <div class="favorite-locations">
+                <div class="location">
+                    <h2>Avchala</h2>
+                    <div>
+                        <img src="img/clear.png" class="">
+                        <h3>22C</h3>
+                        <i class="ri-close-circle-line delete-location"></i>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="saved-location">
+                <i class="ri-map-pin-line"></i>
+                <h1>Saved Locations</h1>
+                <i class="ri-map-pin-line map"></i>
+            </div>
+
+            <div class="locations">
+                
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MAIN CARD -->
+    <div class="card">
+        <div class="top-info">
+            <div class="menu" id="menu">
+                <i class="ri-menu-line"></i>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="enter city name" spellcheck="false">
+                <button><img src="img/search.png" alt=""></button>
+            </div>
+        </div>
+
+        <div class="error">
+            <p>Invalid city name</p>
+        </div>
+
+        <div class="weather">
+            <div class="main-info">
+                <img src="img/clear.png" class="weather-icon">
+                <div class="main">
+                    <h1 class="temp"></h1>
+                    <h2 class="city"></h2>
+                </div>
+            </div>
+           <div class="bookmarkDiv">
+                <div>
+                    <p id="feelsLike"></p>
+                    <p id="dateID"></p>
+                </div>
+                <i id="saveLocation" class="ri-bookmark-line"></i>
+           </div>
+            
+
+            <div class="weather-by-time">
+                
+            </div>
+
+            <div class="sunTimes">
+                
+            </div>
+
+            <div class="weather-by-days">
+
+            </div>
+
+
+            <div class="details">
+                <div class="col">
+                    <img src="img/humidity.png">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <img src="img/wind.png">
+                    <div>
+                        <p class="wind">15 km/h</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
